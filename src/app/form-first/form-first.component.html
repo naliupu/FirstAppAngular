@@ -1,0 +1,59 @@
+<!-- formulario con un evento onClick -->
+
+<p>form-first works!</p>
+<!-- <label for="name">Nombre: </label> -->
+<p>Nombre: </p>
+<input type="text" id="name" [value]="defaultName">
+<!-- <br> -->
+
+<!-- <label for="lastName">Apellido: </label> -->
+<p>Apellido: </p>
+<input type="text" id="lastName" >
+<!-- <br> -->
+
+<!-- <label for="email">Email: </label> -->
+<p>Email: </p>
+<input #email type="email" id="email">
+
+<hr>
+<button (click)="onSendForm(email)">Enviar</button>
+<hr>
+<button (click)="defaultForm()">Formulario X Defecto</button>
+
+
+<!-- Interpolacion {{}} es como definir una variable dentro de una etiqueta HTML, la cual podemos usar en el.ts-->
+
+
+<p>{{ status }}</p>
+
+<!-- Directiva ngIf -->
+
+<div *ngIf="displayPassword; then showPassword; else hiddenPassword">
+</div>
+
+<ng-template #showPassword>
+    <p>123456789</p>
+</ng-template>
+
+<ng-template #hiddenPassword>
+    <p>********</p>
+</ng-template>
+
+<!-- Directiva ngSwitch -->
+<div [ngSwitch]= "lightStatus">
+    <div *ngSwitchCase = "'RED'">Rojo</div>
+    <div *ngSwitchCase = "'GREEN'">Verde</div>
+    <div *ngSwitchCase = "'YELLOW'">Amarillo</div>
+    <div *ngSwitchCase = "'BLUE'">Azul</div>
+    <div *ngSwitchDefault>Esta malo</div>
+</div>
+
+
+<!-- Directiva For -->
+<div *ngFor="let name of names">
+<p>{{name}}</p>
+</div>
+
+
+<!-- @input -->
+<p>{{messageForParent}}</p>
